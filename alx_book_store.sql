@@ -11,18 +11,19 @@ CREATE TABLE Authors(
 author_id INT PRIMARY KEY,
 author_name VARCHAR(215)
 );
-CREATE TABLE Orders(
-order_id INT PRIMARY KEY,
-FOREIGN KEY(customer_id) REFERENCES Customer(customer_id));
-CREATE TABLE CUSTOMER(
+CREATE TABLE Customers(
 customer_id INT PRIMARY KEY,
 customer_name VARCHAR(215) NOT NULL,
 email VARCHAR(215) UNIQUE,
 address TEXT
 );
+CREATE TABLE Orders(
+order_id INT PRIMARY KEY,
+FOREIGN KEY(customer_id) REFERENCES Customers(customer_id));
+
 CREATE TABLE Order_Details(
 orderdetailid INT PRIMARY KEY,
-FOREIGN KEY(order_id) REFERENCES Order(order_id),
+FOREIGN KEY(order_id) REFERENCES Orders(order_id),
 FOREIGN KEY(book_id) REFERENCES Books(book_id),
 quantity DOUBLE
 );
