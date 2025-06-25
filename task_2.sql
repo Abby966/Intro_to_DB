@@ -1,7 +1,4 @@
-
 USE alx_book_store;
-
-
 CREATE TABLE Authors (
     author_id INT AUTO_INCREMENT PRIMARY KEY,
     first_name VARCHAR(100),
